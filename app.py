@@ -1,3 +1,4 @@
+import operator
 #paths = {"S":"A","A":"S","S":"B","B":"S","S":"E","E":"S","A":"E","E":"A"}
 #paths_matrix = []
 #weighted_matrix =
@@ -28,8 +29,9 @@ currentnodedistances = dist_matrix[nodes.index(currentnode)]
 print(currentnodedistances)
 print(tent)
 for i in range(len(currentnodedistances)):
-    if i != 0:
+    if currentnodedistances[i] != 0:
         tent[nodes[i]] = currentnodedistances[i]
 print(tent)
-
+min = min(tent.items(),key=operator.itemgetter(1))[0]
+print(min)
 
